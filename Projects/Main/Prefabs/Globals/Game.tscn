@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://tjfls1kmdsa3"]
+
+[ext_resource type="Script" path="res://Scripts/Classes/Game.cs" id="1_sk6gs"]
+[ext_resource type="Script" path="res://Scripts/Classes/Stats.cs" id="2_d125h"]
+
+[node name="Game" type="Node" node_paths=PackedStringArray("playerStats", "transitionRect")]
+script = ExtResource("1_sk6gs")
+playerStats = NodePath("PlayerStats")
+transitionRect = NodePath("CanvasLayer/TransitionRect")
+
+[node name="PlayerStats" type="Node" parent="."]
+script = ExtResource("2_d125h")
+maxHealth = 200
+health = 100
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 99
+
+[node name="TransitionRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)

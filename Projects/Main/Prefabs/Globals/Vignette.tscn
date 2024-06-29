@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://chnrf7eogg326"]
+
+[ext_resource type="Shader" path="res://Prefabs/Shader/Vignette.gdshader" id="1_le4yk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cjs6x"]
+shader = ExtResource("1_le4yk")
+shader_parameter/alpha = 0.25
+shader_parameter/inner_radius = 0.815
+shader_parameter/outer_radius = 1.2
+
+[node name="Vignette" type="CanvasLayer"]
+layer = 10
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_cjs6x")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

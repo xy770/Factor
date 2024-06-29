@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://bw8ib7ogthth2"]
+
+[ext_resource type="PackedScene" uid="uid://c3564as3iblvb" path="res://Prefabs/Items/Weapon/Weapon.tscn" id="1_4wkpo"]
+[ext_resource type="Script" path="res://Scripts/Weapon/Sword.cs" id="2_fv1df"]
+
+[node name="Sword" instance=ExtResource("1_4wkpo")]
+script = ExtResource("2_fv1df")

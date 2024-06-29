@@ -1,0 +1,32 @@
+# Godot-specific ignores
+.import/
+export.cfg
+export_presets.cfg
+.godot/
+
+# data_*/
+*.o
+*.os
+*.so
+*.dylib
+*.import
+*.dblite
+*.dll
+*.exp
+*.lib
+*.obj
+native/logs
+*.idb
+*.pdb
+
+.vscode
+
+# Assets
+Assets/
+
+# Others
+android/
+Tools/
+
+# Build
+Builds/

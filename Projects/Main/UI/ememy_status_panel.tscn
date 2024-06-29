@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://dq6dcbhabp88a"]
+
+[ext_resource type="Script" path="res://UI/StatusPanel.cs" id="1_cs21y"]
+[ext_resource type="Texture2D" uid="uid://klw7blqwcwks" path="res://Sprites/HUD.png" id="2_helhp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mkrl8"]
+atlas = ExtResource("2_helhp")
+region = Rect2(307, 21, 58, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpw4l"]
+atlas = ExtResource("2_helhp")
+region = Rect2(308, 86, 56, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vopf"]
+atlas = ExtResource("2_helhp")
+region = Rect2(308, 86, 56, 4)
+
+[node name="EmemyStatusPanel" type="HBoxContainer" node_paths=PackedStringArray("healthBar", "easedHealthBar")]
+script = ExtResource("1_cs21y")
+healthBar = NodePath("V/HealthBar")
+easedHealthBar = NodePath("V/HealthBar/EasedHealthBar")
+
+[node name="V" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="HealthBar" type="TextureProgressBar" parent="V"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.0
+value = 1.0
+texture_over = SubResource("AtlasTexture_mkrl8")
+texture_progress = SubResource("AtlasTexture_xpw4l")
+texture_progress_offset = Vector2(1, 1)
+
+[node name="EasedHealthBar" type="TextureProgressBar" parent="V/HealthBar"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.0
+value = 1.0
+texture_progress = SubResource("AtlasTexture_6vopf")
+texture_progress_offset = Vector2(1, 1)
